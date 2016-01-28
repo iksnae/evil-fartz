@@ -28,8 +28,13 @@ static NSString * fartzURL = @"https://s3-us-west-2.amazonaws.com/evilapples-scr
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"Evil Fartz";
+    
     [self.soundsTableView setDelegate:self];
     [self.soundsTableView setDataSource:self];
+    [self.soundsTableView setBackgroundColor:[UIColor clearColor]];
+    [self.view setBackgroundColor:[UIColor redColor]];
+    
     [[SoundManager sharedManager]setDelegate:self];
     
     self.downloader = [SoundZipDownloader new];
@@ -46,6 +51,9 @@ static NSString * fartzURL = @"https://s3-us-west-2.amazonaws.com/evilapples-scr
         [self.hud hide:YES];
     }
 }
+
+
+
 
 - (void)refreshSounds {
     NSArray *acceptedExtensions = @[@"aif",@"wav",@"mp3"];

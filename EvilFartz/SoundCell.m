@@ -17,7 +17,7 @@
         self.indicatorView.alpha = 1;
         [self.indicatorView start];
     }else{
-        self.nameLabel.textColor = [UIColor blackColor];
+        self.nameLabel.textColor = [UIColor whiteColor];
         self.indicatorView.alpha = 0;
         [self.indicatorView stop];
     }

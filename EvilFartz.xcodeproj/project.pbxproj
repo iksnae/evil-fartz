@@ -20,6 +20,7 @@
 		E9D9888D1C5A871200F4C27C /* NSString+EvilFartz.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D9888C1C5A871200F4C27C /* NSString+EvilFartz.m */; };
 		E9D988931C5A8B8F00F4C27C /* SoundCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D988921C5A8B8F00F4C27C /* SoundCell.m */; };
 		E9D988961C5A924D00F4C27C /* PlaybackIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D988951C5A924D00F4C27C /* PlaybackIndicatorView.m */; };
+		E9D988991C5A98A700F4C27C /* UINavController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D988981C5A98A700F4C27C /* UINavController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,8 @@
 		E9D988921C5A8B8F00F4C27C /* SoundCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundCell.m; sourceTree = "<group>"; };
 		E9D988941C5A924D00F4C27C /* PlaybackIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaybackIndicatorView.h; sourceTree = "<group>"; };
 		E9D988951C5A924D00F4C27C /* PlaybackIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaybackIndicatorView.m; sourceTree = "<group>"; };
+		E9D988971C5A98A700F4C27C /* UINavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UINavController.h; sourceTree = "<group>"; };
+		E9D988981C5A98A700F4C27C /* UINavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UINavController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,8 @@
 				E9D9886D1C59DD5800F4C27C /* AppDelegate.m */,
 				E9D9886F1C59DD5800F4C27C /* ViewController.h */,
 				E9D988701C59DD5800F4C27C /* ViewController.m */,
+				E9D988971C5A98A700F4C27C /* UINavController.h */,
+				E9D988981C5A98A700F4C27C /* UINavController.m */,
 				E9D988801C59DFBB00F4C27C /* SoundZipDownloader.h */,
 				E9D988811C59DFBB00F4C27C /* SoundZipDownloader.m */,
 				E9D988881C5A819500F4C27C /* SoundManager.h */,
@@ -251,6 +256,7 @@
 				E9D9888D1C5A871200F4C27C /* NSString+EvilFartz.m in Sources */,
 				E9D988961C5A924D00F4C27C /* PlaybackIndicatorView.m in Sources */,
 				E9D9886E1C59DD5800F4C27C /* AppDelegate.m in Sources */,
+				E9D988991C5A98A700F4C27C /* UINavController.m in Sources */,
 				E9D9888A1C5A819500F4C27C /* SoundManager.m in Sources */,
 				E9D988821C59DFBB00F4C27C /* SoundZipDownloader.m in Sources */,
 				E9D9886B1C59DD5800F4C27C /* main.m in Sources */,
