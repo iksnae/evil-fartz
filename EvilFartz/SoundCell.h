@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PlaybackIndicatorView.h"
+
 
 @interface SoundCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIView *indicatorView;
+@property (weak, nonatomic) IBOutlet PlaybackIndicatorView *indicatorView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *infoLabel;
 @property (nonatomic, assign) BOOL playing;

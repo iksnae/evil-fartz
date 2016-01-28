@@ -29,7 +29,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="73.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XeT-Ms-0dc">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XeT-Ms-0dc" customClass="PlaybackIndicatorView">
                                                     <rect key="frame" x="542" y="12" width="50" height="50"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
