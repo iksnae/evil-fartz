@@ -80,8 +80,9 @@
 
 -(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location
 {
-    NSString *path = [[[NSURL docDirectory]absoluteString]stringByAppendingString:@"tmp.zip"];
-    [downloadedData writeToFile:path atomically:YES];
+    NSString *path = [[[NSURL docDirectory]absoluteString]stringByAppendingString:@"/tmp.zip"];
+    NSData *d = [NSData dataWithContentsOfURL:location];
+    [d writeToFile:path atomically:YES];
     [self unzipSoundsAtPath:path];
 }
 
