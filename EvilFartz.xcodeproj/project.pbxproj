@@ -16,6 +16,9 @@
 		E9D988791C59DD5800F4C27C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9D988771C59DD5800F4C27C /* LaunchScreen.storyboard */; };
 		E9D988821C59DFBB00F4C27C /* SoundZipDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D988811C59DFBB00F4C27C /* SoundZipDownloader.m */; };
 		E9D988861C5A061C00F4C27C /* NSURL+EvilFartz.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D988851C5A061C00F4C27C /* NSURL+EvilFartz.m */; };
+		E9D9888A1C5A819500F4C27C /* SoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D988891C5A819500F4C27C /* SoundManager.m */; };
+		E9D9888D1C5A871200F4C27C /* NSString+EvilFartz.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D9888C1C5A871200F4C27C /* NSString+EvilFartz.m */; };
+		E9D988931C5A8B8F00F4C27C /* SoundCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D988921C5A8B8F00F4C27C /* SoundCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,12 @@
 		E9D988811C59DFBB00F4C27C /* SoundZipDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundZipDownloader.m; sourceTree = "<group>"; };
 		E9D988841C5A061C00F4C27C /* NSURL+EvilFartz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+EvilFartz.h"; sourceTree = "<group>"; };
 		E9D988851C5A061C00F4C27C /* NSURL+EvilFartz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+EvilFartz.m"; sourceTree = "<group>"; };
+		E9D988881C5A819500F4C27C /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
+		E9D988891C5A819500F4C27C /* SoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundManager.m; sourceTree = "<group>"; };
+		E9D9888B1C5A871200F4C27C /* NSString+EvilFartz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+EvilFartz.h"; sourceTree = "<group>"; };
+		E9D9888C1C5A871200F4C27C /* NSString+EvilFartz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+EvilFartz.m"; sourceTree = "<group>"; };
+		E9D988911C5A8B8F00F4C27C /* SoundCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundCell.h; sourceTree = "<group>"; };
+		E9D988921C5A8B8F00F4C27C /* SoundCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +103,10 @@
 				E9D988701C59DD5800F4C27C /* ViewController.m */,
 				E9D988801C59DFBB00F4C27C /* SoundZipDownloader.h */,
 				E9D988811C59DFBB00F4C27C /* SoundZipDownloader.m */,
+				E9D988881C5A819500F4C27C /* SoundManager.h */,
+				E9D988891C5A819500F4C27C /* SoundManager.m */,
+				E9D988911C5A8B8F00F4C27C /* SoundCell.h */,
+				E9D988921C5A8B8F00F4C27C /* SoundCell.m */,
 				E9D988871C5A0B0D00F4C27C /* Extensions */,
 				E9D988721C59DD5800F4C27C /* Main.storyboard */,
 				E9D988751C59DD5800F4C27C /* Assets.xcassets */,
@@ -117,6 +130,8 @@
 			children = (
 				E9D988841C5A061C00F4C27C /* NSURL+EvilFartz.h */,
 				E9D988851C5A061C00F4C27C /* NSURL+EvilFartz.m */,
+				E9D9888B1C5A871200F4C27C /* NSString+EvilFartz.h */,
+				E9D9888C1C5A871200F4C27C /* NSString+EvilFartz.m */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -228,9 +243,12 @@
 			files = (
 				E9D988861C5A061C00F4C27C /* NSURL+EvilFartz.m in Sources */,
 				E9D988711C59DD5800F4C27C /* ViewController.m in Sources */,
+				E9D9888D1C5A871200F4C27C /* NSString+EvilFartz.m in Sources */,
 				E9D9886E1C59DD5800F4C27C /* AppDelegate.m in Sources */,
+				E9D9888A1C5A819500F4C27C /* SoundManager.m in Sources */,
 				E9D988821C59DFBB00F4C27C /* SoundZipDownloader.m in Sources */,
 				E9D9886B1C59DD5800F4C27C /* main.m in Sources */,
+				E9D988931C5A8B8F00F4C27C /* SoundCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

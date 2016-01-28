@@ -9,15 +9,18 @@
 #import "ViewController.h"
 #import "SoundZipDownloader.h"
 #import "NSURL+EvilFartz.h"
-#import <MBProgressHUD/MBProgressHUD.h>
+#import "NSString+EvilFartz.h"
+#import "SoundManager.h"
+#import "SoundCell.h"
 
 
 static NSString * fartzURL = @"https://s3-us-west-2.amazonaws.com/evilapples-scratch/Fartz.zip";
 
-@interface ViewController ()<SoundZipDownloaderDelegate>
+@interface ViewController ()<SoundZipDownloaderDelegate, SoundManagerDelegate>
 @property (nonatomic, strong) SoundZipDownloader *downloader;
 @property (nonatomic, strong) MBProgressHUD *hud;
 @property (nonatomic, strong) NSArray *sounds;
+@property (nonatomic, strong) NSIndexPath *playingIndexPath;
 @end
 
 @implementation ViewController
@@ -27,6 +30,7 @@ static NSString * fartzURL = @"https://s3-us-west-2.amazonaws.com/evilapples-scr
     
     [self.soundsTableView setDelegate:self];
     [self.soundsTableView setDataSource:self];
+    [[SoundManager sharedManager]setDelegate:self];
     
     self.downloader = [SoundZipDownloader new];
     self.downloader.delegate = self;
@@ -86,17 +90,29 @@ static NSString * fartzURL = @"https://s3-us-west-2.amazonaws.com/evilapples-scr
 
 - (void)soundZipDownloaderDidFail
 {
-    
-}
-
-#pragma mark - UITableViewDataSource
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return  100;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self refreshSounds];
+        [self.hud setLabelText:@"Failed to download Sounds"];
+        [self.hud hide:YES afterDelay:1];
+    });
 }
 
 #pragma mark - UITableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return  75;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.playingIndexPath = indexPath;
+    NSString *soundFile = [[self sounds]objectAtIndex:indexPath.row];
+    NSString *pathToSound = [[[[NSURL docDirectory] absoluteString] stringByAppendingPathComponent:@"Sounds"] stringByAppendingPathComponent:soundFile];
+    [[SoundManager sharedManager] playSoundWithAtPath:pathToSound];
+}
+
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -104,10 +120,30 @@ static NSString * fartzURL = @"https://s3-us-west-2.amazonaws.com/evilapples-scr
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SoundCell" forIndexPath:indexPath];
-    cell.textLabel.text = [self.sounds objectAtIndex:indexPath.row];
-    
+    SoundCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SoundCell" forIndexPath:indexPath];
+    NSString *fileName =  [self.sounds objectAtIndex:indexPath.row];
+    cell.nameLabel.text = [[self.sounds objectAtIndex:indexPath.row] fancyFileName];
+    cell.infoLabel.text = [NSString stringWithFormat:@"Type: %@",[[fileName pathExtension] uppercaseString]];
+    cell.playing = (self.playingIndexPath == indexPath);
     return cell;
+}
+
+#pragma mark - SoundManagerDelegate
+
+- (void)soundStartedPlaying
+{
+    [self.soundsTableView reloadData];
+}
+
+- (void)soundFinishedPlaying
+{
+    self.playingIndexPath = nil;
+    [self.soundsTableView reloadData];
+}
+
+- (void)soundFailedToPlay
+{
+    
 }
 
 @end
